@@ -279,7 +279,7 @@ const PatternDisplay= () => {
       </label>
         <input  
           type="number"  
-          min="5"  
+          min="10"  
           value={gridWidth}  
           onChange={(e) => setGridWidth(Number(e.target.value))}  
           placeholder="Enter Column Number."  
@@ -293,7 +293,7 @@ const PatternDisplay= () => {
       </label>
         <input  
           type="number"  
-          min="5"  
+          min="10"  
           value={gridHeight}  
           onChange={(e) => setGridHeight(Number(e.target.value))}  
           placeholder="Rows"  
