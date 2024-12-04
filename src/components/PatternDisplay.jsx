@@ -266,69 +266,69 @@ const PatternDisplay= () => {
 
   return (  
   <> 
-  
-  <div>
-      <h1 className=' text-red-600 text-[50px]  mb-30 font-bold font-poppins'>Welcome To Pattern Display Game!</h1>
-      <h3 className=' text-red-800 text-[20px] font-semibold'>You can write any pattern that you want to display on the screen.</h3>
-  </div>
-  
-  <div className=' w-[90%] h-15 flex items-center justify-around mt-5 mb-12 bg-blue-500 rounded'> 
-    <div className='flex items-center justify-center'>
-      <label className ='block text-black text-[20px] font-semibold m-3'>
-        Column: 
-      </label>
-        <input  
-          type="number"  
-          min="10"  
-          value={gridWidth}  
-          onChange={(e) => setGridWidth(Number(e.target.value))}  
-          placeholder="Enter Column Number."  
-          className='shadow appearance-none border rounded w-[100px] py-1 px-5 text-gray-400 leading-tight focus:outline-none focus:shadow-outline'
-        /> 
-    </div>  
 
-    <div className='flex items-center justify-evenly' >
-      <label className ='block text-black text-[20px] font-semibold m-3 '>
-      Row : 
-      </label>
+  <div className='container flex flex-col gap-5 mx-1 w-full  h-auto p-10 tacking-widest font-poppins  md:w-full  md:mx-0'>
+      <h1 className='text-[60px] text-pink-600  font-bold  '>Welcome To Pattern Display Game!</h1>
+      <h3 className='text-gray-500 text-[26px] font-semibold'>You can write any pattern that you want to display on the screen.</h3>
+      <p className='tracking-widest font-bold uppercase text-[30px] text-red-500'>have a fun !</p>
+  </div>
+
+    
+
+  <div className=" container grid grid-cols-2  bg-blue-500 gap-5 w-full h-auto justify-items-center overflow-hidden mx-3 my-5 lg:grid-cols-4 md:gap-5 sm:w-full rounded">  
+   
+    <div className="w-auto p-2 flex flex-row my-4">  
+        <label className='block text-black text-[25px] font-bold  m-3'>Row:</label>  
         <input  
-          type="number"  
-          min="10"  
-          value={gridHeight}  
-          onChange={(e) => setGridHeight(Number(e.target.value))}  
-          placeholder="Rows"  
-           className='shadow appearance-none border rounded w-[100px] py-1 px-5 text-gray-400 leading-tight focus:outline-none focus:shadow-outline'
+            type="number"  
+            min="10"  
+            value={gridHeight}  
+            onChange={(e) => setGridHeight(Number(e.target.value))}  
+            placeholder="Rows"  
+            className='shadow appearance-none border rounded  py-1 px-3  h-[50px] w-[80px] text-[25px]  my-1 text-gray-400 leading-tight focus:outline-none focus:shadow-outline'  
         />  
     </div>
 
-    <div className='flex items-center justify-center' >
-      <label className ='block text-black text-[20px] font-semibold m-3'>
-       Space :
-      </label>
+    <div className="w-auto p-2 flex flex-row my-4">  
+        <label className='block text-black text-[25px] font-bold  m-3'>Column:</label>  
         <input  
-          type="number"  
-          min="1"  
-          value={letterHeight}  
-          onChange={(e) => setLetterHeight(Number(e.target.value))}  
-          placeholder="Letter Height" 
-          className='shadow appearance-none border rounded w-[100px] py-1 px-5 text-gray-400 leading-tight focus:outline-none focus:shadow-outline' 
-        /> 
-      </div> 
+            type="number"  
+            min="10"  
+            max="40"
+            value={gridWidth}  
+            onChange={(e) => setGridWidth(Number(e.target.value))}  
+            placeholder="Enter Column Number."  
+            className='shadow appearance-none border rounded  py-1 px-3 text-gray-400 h-[50px] w-[80px] text-[25px]  my-1 leading-tight focus:outline-none focus:shadow-outline'  
+        />   
+    </div>  
 
-      <div className='flex items-center justify-center' >
-      <label className="block text-black text-[20px] font-semibold m-3" >
-        Word : 
-      </label>
+    <div className=" w-auto p-2 my-4 flex flex-row">  
+        <label className='block text-black text-[25px] font-bold  m-3'>Space:</label>  
         <input  
-          type="text"  
-          value={movingWord}  
-          onChange={(e) => setMovingWord(e.target.value)}  
-          placeholder="Enter text to move"
-          className='shadow appearance-none border rounded w-[130px]  py-1 px-5 text-gray-400 leading-tight focus:outline-none focus:shadow-outline'  
-        /> 
-      </div>  
-</div>  
-      <GridContainer gridWidth={gridWidth} gridHeight={gridHeight} className='absolute left-[10.5%] top-[34%] '>  
+            type="number"  
+            min="1"  
+            value={letterHeight}  
+            onChange={(e) => setLetterHeight(Number(e.target.value))}  
+            placeholder="Letter Height"  
+            className='shadow appearance-none border rounded h-[50px] w-[80px] text-[25px]  my-1 py-1 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline'  
+        />  
+    </div>  
+
+    <div className=" w-auto p-2 mr-10 my-4 flex flex-row">  
+        <label className="block text-black text-[25px] font-bold  m-3">Word:</label>  
+        <input  
+            type="text"  
+            value={movingWord}  
+            onChange={(e) => setMovingWord(e.target.value)}  
+            placeholder="Enter text to move"  
+            className='shadow appearance-none border rounded h-[50px] w-[180px] text-[25px]  my-1 py-1 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline'  
+        />  
+    </div>  
+  </div>
+
+ 
+ 
+      <GridContainer gridWidth={gridWidth} gridHeight={gridHeight} className='mx-5   '>  
         {grid.map((row, rowIndex) =>  
           row.map((isLetter, columnIndex) => (  
             <GridItem  
@@ -339,7 +339,7 @@ const PatternDisplay= () => {
           ))  
         )}  
       </GridContainer>
- 
+   
     </>  
   );  
 };  

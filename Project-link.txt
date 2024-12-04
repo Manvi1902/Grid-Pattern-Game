@@ -1,0 +1,2 @@
+deployment- https://grid-pattern-game.vercel.app/
+git reop link- https://github.com/Manvi1902/Grid-Pattern-Game
